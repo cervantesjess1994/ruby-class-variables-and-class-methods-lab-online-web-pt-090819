@@ -19,19 +19,15 @@ class Song
   end
 
   def self.genres
-    @@genre.uniq
+    @@genres.uniq
   end
 
   def self.artists
     @@artists = []
   end
 
-  def self.genre_count(genre, num_of_songs)
-    @@genre_count = {genre: num_of_songs}
-#    @@genre_count.array.any?("#{genre}")
-#      if genre_exists
-  #      genre +1
-    #  else create_genre_and_add_to_array
+  def self.genre_count
+    @@genres.inject(Hash.new(0)) {|total,i| total[i] += 1 ; total}
   end
 
   def self.artist_count(artist, name_of_song)
