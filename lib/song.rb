@@ -32,9 +32,6 @@ class Song
 #      if genre_exists
   #      genre +1
     #  else create_genre_and_add_to_array
-
-    end
-
   end
 
   def self.artist_count(artist, name_of_song)
