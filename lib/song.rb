@@ -6,12 +6,15 @@ class Song
   @@genre_count
   @@artist_count
 
-  attr_reader :name, :artist, :genre
+  attr_accessor :name, :artist, :genre
 
   def initialize(name, artist, genre)
-    @@count = @count +1
-    @@genre = @genre
-    @@artists = @genre
+    @name = name
+    @artist = artist
+    @genre = genre
+    @@count += 1
+    @@genre << genre
+    @@artists << artist
   end
 
   def self.count
@@ -43,9 +46,9 @@ class Song
     @@artists.each do |artist|
       if artist_count[artist]
         artist_count[artist] += 1
-      else
+      else 
         artist_count[artist] = 1
-      end
+      end 
     end
     artist_count
   end
