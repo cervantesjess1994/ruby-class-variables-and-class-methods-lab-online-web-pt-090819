@@ -39,4 +39,3 @@ class Song
   def self.artist_count(artist, name_of_song)
     @@artist_count = {artist: name_of_song}
   end
-end
